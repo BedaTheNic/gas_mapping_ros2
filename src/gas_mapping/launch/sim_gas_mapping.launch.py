@@ -8,17 +8,6 @@ import os
 def generate_launch_description():
     return LaunchDescription([
 
-        # Launch the Scout simulation from AgileX package
-        IncludeLaunchDescription(
-            PythonLaunchDescriptionSource(
-                os.path.join(
-                    get_package_share_directory('scout_description'),
-                    'launch',
-                    'display_scout_v2.launch.py'
-                )
-            )
-        ),
-
         # Your gas fusion node
         Node(
             package='gas_mapping',
@@ -35,11 +24,11 @@ def generate_launch_description():
         ),
 
         # Your gas map builder node
-        Node(
-            package='gas_mapping',
-            executable='map_builder_node',
-            name='map_builder_node'
-        ),
+ #       Node(
+ #           package='gas_mapping',
+ #           executable='map_builder_node',
+ #           name='map_builder_node'
+ #       ),
 
         # (Optional) Pose bridge if your nodes need it
         Node(
