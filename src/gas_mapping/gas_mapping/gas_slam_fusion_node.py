@@ -64,10 +64,10 @@ class GasSLAMFusionNode(Node):
         msg.header = Header()
         msg.header.stamp = self.get_clock().now().to_msg()
         msg.pose = pose
-        msg.mq2_percent =100 - float(self.latest_gas['mq2'])
-        msg.mq3_percent =100 - float(self.latest_gas['mq3'])
-        msg.mq9_percent = 100 - float(self.latest_gas['mq9'])
-        msg.mq135_percent = 100 - float(self.latest_gas['mq135'])
+        msg.mq2_percent = float(self.latest_gas['mq2'])
+        msg.mq3_percent = float(self.latest_gas['mq3'])
+        msg.mq9_percent = float(self.latest_gas['mq9'])
+        msg.mq135_percent = float(self.latest_gas['mq135'])
 
         self.gas_pub.publish(msg)
 
